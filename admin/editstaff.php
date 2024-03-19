@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../connectionn.php');
+include('../connection.php');
 
 $id = $_GET['id'];
 
@@ -51,15 +51,14 @@ $row = mysqli_fetch_assoc($res);
 
              <label for="blood">blood grp :</label>
              <select name="blood">
-                <option>select blood grp</option>
-                <option value="A+ve" <?php if($row['blood']== 'A+ve'){ echo 'selected'; }?>>A+ve</option>
-                <option value="A-ve" <?php if($row['blood']== 'A-ve'){ echo 'selected'; }?>>A-ve</option>
-                <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
-                <option value="B-ve" <?php if($row['blood']== 'B-ve'){ echo 'selected'; }?>>B-ve</option>
-                <option value="AB+ve" <?php if($row['blood']== 'AB+ve'){ echo 'selected'; }?>>AB+ve</option>
-                <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
-                <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
-                <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
+             <option value="A+ve" <?php if($row['blood']== 'A+ve'){ echo 'selected'; }?>>A+ve</option>
+              <option value="A-ve" <?php if($row['blood']== 'A-ve'){ echo 'selected'; }?>>A-ve</option>
+              <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
+              <option value="B-ve" <?php if($row['blood']== 'B-ve'){ echo 'selected'; }?>>B-ve</option>
+              <option value="AB+ve" <?php if($row['blood']== 'AB+ve'){ echo 'selected'; }?>>AB+ve</option>
+              <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
+              <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
+              <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
              </select><br>
              
 
@@ -74,8 +73,8 @@ $row = mysqli_fetch_assoc($res);
              <label for="password">Password</label>
              <input type="password" class="form-control" name="password"  id="password" value="<?php echo $row['password'];?>" placeholder="enter Password"><br>
 
-             <label for="mobno">Mobile No :</label>
-             <input type="number" class="form-control" name="mobno"  id="mobno" maxlength="10" value="<?php echo $row['mobno'];?>" placeholder="enter mobile number"><br>
+             <label for="contact">Mobile No :</label>
+             <input type="number" class="form-control" name="contact"  id="contact" maxlength="10" value="<?php echo $row['contact'];?>" placeholder="enter mobile number"><br>
 
              <label for="profession">Profession :</label>
              <select name="profession">

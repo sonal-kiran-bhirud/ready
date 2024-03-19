@@ -2,11 +2,11 @@
         session_start();
         //$id = $_SESSION['id'];
 
-        include('../connectionn.php');
+        include('../connection.php');
 
 
 
-        $sql = "SELECT `id`, `name`, `email`, `aadharno`, `gender`, `mobno`, `qualification`, `myfile` FROM `doctor`;";        
+         $sql = "SELECT `id`, `name`, `email`, `aadharno`, `gender`, `contact`, `qualification`, `myfile` FROM `doctor`;";      
         $res = mysqli_query($conn, $sql);
 
     ?>
@@ -68,11 +68,11 @@
     <div class="fluid-container">
         <div class="row">
             <div class="col-sm-2 " style="outline: 2px solid gray;">
-                <center><img width="100" align="center" src="images/1600w-hbl5vlZh180.webp"><br>
+                <center><img width="100" align="center" src="../images/1600w-hbl5vlZh180.webp"><br>
                     <font color="PURPLE" style="font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-weight: bold;">Health Care</font>
                 </center>
                 <hr style="margin: 7px; ">
-                <div><img src="images/doctor girl.webp" alt="image" height="80px" width="80px" style="border-radius: 50%;margin-left: 9px;">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 20px; font-weight: bold;">Admin</font></div>
+                <div><img src="../images/doctor girl.webp" alt="image" height="80px" width="80px" style="border-radius: 50%;margin-left: 9px;">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 20px; font-weight: bold;">Admin</font></div>
 
                 <hr style="margin: 7px; ">
                 <div class="dropdown" style="width:100%;margin-left:7px">
@@ -94,8 +94,8 @@
                      <li><a class="dropdown-item" href="#">Patients Records</a></li>
                      
                      <li><hr></li>
-                        <li><a class="dropdown-item" href="ipdview.php">IPD Records</a></li>
-                        <li><a class="dropdown-item" href="oopdview.php">OPD Records</a></li>
+                        <li><a class="dropdown-item" href="#">IPD Records</a></li>
+                        <li><a class="dropdown-item" href="#">OPD Records</a></li>
                         <li><a class="dropdown-item" href="#">Emergency Records</a></li>
                      
                  </ul>
@@ -109,7 +109,7 @@
                    Nurse
                   </button>
                    <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="nurselist.php">Nurse Records</a></li>
+                     <li><a class="dropdown-item" href="#">Nurse Records</a></li>
                      
                  </ul>
                 </div><br>
@@ -168,152 +168,120 @@
                 </div><br> 
 
                                             <div>
-                                                <a href="register.php" class="text-decoration-none"><button class="form-control" style="text-decoration: none;" id="butt"><i class="fa-solid fa-address-card"></i>&nbsp;New Register</button></a></div><br>
+                                                <a href="../admin/staffregform.php" class="text-decoration-none"><button class="form-control" style="text-decoration: none;" id="butt"><i class="fa-solid fa-address-card"></i>&nbsp;New Register</button></a></div><br>
 
                                                 <div>
                                                     <a href="logout.php" class="text-decoration-none"><button class="form-control" style="text-decoration: none;" id="butt"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Log Out</button></a></div><br>
 
                 <hr style="margin: 7px; ">
             </div>
+        
 
             <div class="col-sm-10">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary" >
-                    <div class="container-fluid" style="background-color:purple">
-                        <a class="navbar-brand" href="#">
-                            <img src="images/1600w-hbl5vlZh180.webp" alt="Bootstrap" width="55" height="54" style="border-radius: 50%;">
-                          </a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item" >
-                            <a class="nav-link active" aria-current="page" href="AdminDashboard.php" style="color: aliceblue;">Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: aliceblue;"></a>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: aliceblue;">
-                              Dashboard
-                            </a>
 
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="AdminDashboard.php">Admin</a></li>
-                              <li><a class="dropdown-item" href="doctordashboard.php">Doctor</a></li>
-                              <li><a class="dropdown-item" href="staffd.php">Staff</a></li>
-                              <li><a class="dropdown-item" href="Accountant.php">Accountant</a></li>
-                              <li><a class="dropdown-item" href="Nurse.php">Nurse</a></li>
-                              <li><a class="dropdown-item" href="receptionistd.php">Receptionist</a></li>
-                              
-                            </ul>
-                          </li>
-                          
-                        </ul>
-                        <div class="input-group mb-3" width=50% style="margin-left:55%;margin-top:15px">
-                           <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" >
-                         <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                        <!-- <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> -->
-                      </div>
-                    </div>
-                  </nav>
 
 
 
    
-<div class="fluid-container" >
+                <div class="fluid-container" >
 
-    <header id="header1" class="sticky-lg-top">
+                    <header id="header1" class="sticky-lg-top">
 
-    <div class="fluid-container" >
-        <div class="row" >
-            <div class="col-lg-4">
-                <div class="" style="">
-                    <div class="">
-                        <h5 class="card-title"><p id="pdt"><?php 
-                        echo "Day: " . date("l") . "<br>";
-                        echo "<br>";
-                        echo "Date: " . date("Y/m/d"); ?></p>
-                        </h5>
+                        <div class="fluid-container" >
+                            <div class="row" >
+                                <div class="col-lg-1">
+                                    <a class="nav-link active" aria-current="page" href="../admin/admindashboard.php" style="color: aliceblue;">Home</a>
+
+                                </div>
+                                <div class="col-lg-3">
+                                        <div class="" style="">
+                                            <div class="">
+                                                
+                                                <h5 class="card-title"><p id="pdt"><?php 
+                                                echo "Day: " . date("l") . "<br>";
+                                                echo "<br>";
+                                                echo "Date: " . date("Y/m/d"); ?></p>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                </div>
+                                    
+
+                                <div class="col-lg-4">
+                                        
+                                                <h5  id="font1">Doctor List
+                                                </h5>
+                                    
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="" style="">
+                                        
+                                            <div class="input-group mb-3" width="10%" style="margin-left:0%;margin-top:15px">
+                                            <!-- <button class="btn btn-primary" name="" value="back"><a href="doctordashboard.php"></a>back</button> -->
+                                            <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" style="margin-left:30%" name="" id="search" onkeyup="searchfun()">
+                                            <button class="btn btn-outline-primary" type="button" id="button-addon2" style="margin-right:3%"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                            </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
-                </div>
-            </div>
+                </header>
 
-        <div class="col-lg-4">
-                
-                        <h5  id="font1">Doctor List
-                        </h5>
             
-        </div>
-
-        <div class="col-lg-4">
-            <div class="" style="">
-                
-                    <div class="input-group mb-3" width="10%" style="margin-left:0%;margin-top:15px">
-                       <!-- <button class="btn btn-primary" name="" value="back"><a href="doctordashboard.php"></a>back</button> -->
-                       <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" style="margin-left:30%" name="" id="search" onkeyup="searchfun()">
-                       <button class="btn btn-outline-primary" type="button" id="button-addon2" style="margin-right:3%"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-
-                 
-            </div>
-        </div>
-     </div>
 
 
-</div>
-</div>
-</header>
-<div class="table-responsive">
+            <div class="container table-responsive">
 
                 <table class="table table-border" style="width:80%" id="mytable">
-                <tr>
-                <th>Sr no.</th>
-    <th>name</th>
-    <th>email</th>
-    <th>aadharno</th>
-    <th>Gender</th>
-    <th>mobno</th>
-    <th>qualification</th>
-    <th>profile photo</th>
-    <th>detailedview</th>
-    <th>option</th>
-                    
-                </tr>
+                    <tr>
+                    <th>Sr no.</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>aadharno</th>
+                    <th>Gender</th>
+                    <th>contact</th>
+                    <th>qualification</th>
+                    <th>profile photo</th>
+                    <th>detailedview</th>
+                    <th>option</th>
+                        
+                    </tr>
 
-                <?php 
-                $cn = 1;
-                while($row= mysqli_fetch_array($res)){
-
-
-
-                ?>
-                <tr>
-                <td><?php echo $cn++; ?></td>
-    <td><?php echo $row['name']; ?></td>
-    <td><?php echo $row['email']; ?></td>
-    <td><?php echo $row['aadharno']; ?></td>
-
-    <td><?php echo $row['gender']; ?></td>
-    <td><?php echo $row['mobno']; ?></td>
-    <td><?php echo $row['qualification']; ?></td>
-    <td><img src="../uploads/<?php echo $row['myfile']; ?>" style="width:100px;height:100px;"></td>
-    <td><a href="#?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-eye"></i></a></td>
+                        <?php 
+                        $cn = 1;
+                        while($row= mysqli_fetch_assoc($res)){
 
 
-    <td><a href="editdoctor.php?id=<?php echo $row['id']; ?>"><i class="fa fa-pencil" style="font-size:30px;color:black;"></i> </a>
-    <a href="deletedoctor.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash " style="font-size:30px;color:red;"></i></a></td>
-                    
-                    
-                </tr>
-                    <?php } ?>
+
+                        ?>
+                    <tr>
+                        <td><?php echo $cn++; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['aadharno']; ?></td>
+
+                        <td><?php echo $row['gender']; ?></td>
+                        <td><?php echo $row['contact']; ?></td>
+                        <td><?php echo $row['qualification']; ?></td>
+                        <td><img src="../uploads/<?php echo $row['myfile']; ?>" style="width:100px;height:100px;"></td>
+                        <td><a href="profile.php?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-eye"></i></a></td>
 
 
-                <script>
+                        <td><a href="editdoctor.php?id=<?php echo $row['id']; ?>"><i class="fa fa-pencil" style="font-size:30px;color:black;"></i> </a>
+                        <a href="deletedoctor.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash " style="font-size:30px;color:red;"></i></a></td>
+                            
+                            
+                    </tr>
+                        <?php } ?>
+
+
+                    <script>
                     function searchfun(){
                         let filter = document.getElementById('search').value.toUpperCase();
                         let mytab = document.getElementById('mytable');
@@ -360,8 +328,10 @@
                     
                             
                             
-                </script>
+                    </script>
                 </table>
+                </div>
+                </div>
             </div>
         
        

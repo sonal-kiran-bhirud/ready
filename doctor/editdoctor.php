@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../connectionn.php');
+include('../connection.php');
 
 $id = $_GET['id'];
 
@@ -70,8 +70,8 @@ $row = mysqli_fetch_assoc($res);
             <input type="text" class="form-control" name="aadharno" id="aadharno" placeholder="1234-4567-7891" value="<?php echo $row['aadharno'];?>">
             </div>
             <div class="col-md-6 mb-3">
-            <label for="mobno">Conatct :</label>
-            <input type="text" class="form-control" name="mobno" id="mobno" placeholder="Enter your contact number" value="<?php echo $row['mobno'];?>">
+            <label for="contact">Conatct :</label>
+            <input type="text" class="form-control" name="contact" id="contact" placeholder="Enter your contact number" value="<?php echo $row['contact'];?>">
             </div>
             </div>
 
@@ -85,11 +85,13 @@ $row = mysqli_fetch_assoc($res);
             <select name="profession" id="profession" class="form-control">
               <option value="admin" <?php if($row['profession']== 'admin'){ echo 'selected'; }?>>Admin</option>
               <option value="doctor" <?php if($row['profession']== 'doctor'){ echo 'selected'; }?>>Doctor</option>
-              <option value="staff" <?php if($row['profession']== 'staff'){ echo 'selected'; }?>>Staff</option>
-              <option value="nurse" <?php if($row['profession']== 'nurse'){ echo 'selected'; }?>>Nurse</option>
               <option value="receptionist" <?php if($row['profession']== 'receptionist'){ echo 'selected'; }?>>Receptionist</option>
+              <option value="nurse" <?php if($row['profession']== 'nurse'){ echo 'selected'; }?>>Nurse</option>
+              
               <option value="accountant" <?php if($row['profession']== 'accountant'){ echo 'selected'; }?>>accountant</option>
 
+              <option value="staff" <?php if($row['profession']== 'staff'){ echo 'selected'; }?>>Staff</option>
+              
               
             </select>
             </div>
@@ -106,15 +108,14 @@ $row = mysqli_fetch_assoc($res);
                 
             <label for="blood">Choose a Blood Group:</label>
             <select name="blood" id="blood" class="form-control">
-            <option value="">Select blood group</option>
-              <option value="A+ve" <?php if($row['blood']== 'A+ve'){ echo 'selected'; }?>>A+ve</option>
-              <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
-              <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
+            <option value="A+ve" <?php if($row['blood']== 'A+ve'){ echo 'selected'; }?>>A+ve</option>
               <option value="A-ve" <?php if($row['blood']== 'A-ve'){ echo 'selected'; }?>>A-ve</option>
+              <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
               <option value="B-ve" <?php if($row['blood']== 'B-ve'){ echo 'selected'; }?>>B-ve</option>
-              <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
-              <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
               <option value="AB+ve" <?php if($row['blood']== 'AB+ve'){ echo 'selected'; }?>>AB+ve</option>
+              <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
+              <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
+              <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
             </select>
             </div>
         </div>
@@ -128,7 +129,7 @@ $row = mysqli_fetch_assoc($res);
             
             <label for="department">Department :</label>
              <select name="department">
-                <option>select department</option>
+                
                 <option value="neurology">Neurology</option>
                 <option value="gynaecology">Gynaecology</option>
                 <option value="cardiology">Cardiology</option>

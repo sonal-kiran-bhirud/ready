@@ -52,7 +52,7 @@
         
         <?php
         
-            include('../connectionn.php');
+            include('../connection.php');
             if(isset($_POST['submit'])){
                 //print_r($_POST);die;
 
@@ -72,7 +72,7 @@
                 //print_r($registrationdate);
                 
                 $experience= $_POST['experience'];
-                $mobno = $_POST['mobno'];
+                $contact = $_POST['contact'];
                 $profession = $_POST['profession'];
                 $qualification = $_POST['qualification'];
                 $department = $_POST['department'];
@@ -100,7 +100,7 @@
                     }else{
                         
                         //print_r("In Else");
-                        $sql = "INSERT INTO `register` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `mobno`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$mobno', '$profession', '$qualification', '$department', '$myfile')";
+                        $sql = "INSERT INTO `register` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `contact`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$contact', '$profession', '$qualification', '$department', '$myfile')";
     
                         $a = mysqli_query($conn, $sql);
                         
@@ -147,7 +147,7 @@
         
                                 if($row['profession']== 'admin'){
                 
-                                    $sqle = "INSERT INTO `admin` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `mobno`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$mobno', '$profession', '$qualification', '$department', '$myfile')";
+                                    $sqle = "INSERT INTO `admin` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `contact`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$contact', '$profession', '$qualification', '$department', '$myfile')";
                                     
                                     $e = mysqli_query($conn, $sqle);
                                     move_uploaded_file($tmpmyfile,  $folder);  
@@ -175,7 +175,7 @@
                                 
                                 elseif($row['profession']== 'doctor'){
                 
-                                    $sql1 = "INSERT INTO `doctor` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `mobno`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$mobno', '$profession', '$qualification', '$department', '$myfile')";
+                                    $sql1 = "INSERT INTO `doctor` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `contact`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$contact', '$profession', '$qualification', '$department', '$myfile')";
                                     
                                     $d = mysqli_query($conn, $sql1);
                                     move_uploaded_file($tmpmyfile,  $folder);  
@@ -201,9 +201,11 @@
                                 }
                                 
                                 elseif($row['profession']== 'receptionist'){
-                                    $sql2 = "INSERT INTO `receptionist` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `mobno`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$mobno', '$profession', '$qualification', '$department', '$myfile')";
+                                    $sql2 = "INSERT INTO `receptionist` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `contact`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$contact', '$profession', '$qualification', '$department', '$myfile')";
                                     
                                     $r = mysqli_query($conn, $sql2);
+                                    move_uploaded_file($tmpmyfile,  $folder);  
+
                                     
                                     if($r){
                                         echo '<script>
@@ -226,12 +228,15 @@
                                 
                                 
                                 elseif($row['profession']== 'nurse'){
-                                    $sql3 = "INSERT INTO `nurse` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `mobno`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$mobno', '$profession', '$qualification', '$department', '$myfile')";
+                                    $sql3 = "INSERT INTO `nurse` (`name`, `email`, `address`, `aadharno`, `dateofbirth`, `blood`, `gender`, `username`, `password`, `registrationdate`, `experience`, `contact`, `profession`, `qualification`, `department`, `myfile`) VALUES ('$name', '$email', '$address', '$aadharno', '$dateofbirth', '$blood', '$gender', '$username', '$password', '$registrationdate', '$experience', '$contact', '$profession', '$qualification', '$department', '$myfile')";
                                     
                                     $n = mysqli_query($conn, $sql3); 
+                                    move_uploaded_file($tmpmyfile,  $folder);  
+
+                                    
+
                 
                                     if($n){
-                                        
                                         echo '<script>
                                         $(document).ready(function(){
                                             Swal.fire({
@@ -246,7 +251,7 @@
                                     </script>';
                                     }
                                     else{
-                                        echo "there is some interuption";
+                                        echo "fail";
                                     }
                                 }
                 
@@ -263,7 +268,7 @@
                 
 
                 
-                
+               ///[^0-9]/g,'' 
                 
             
 
@@ -293,7 +298,7 @@
 <div class="container-fluid" width="50%">
        <div class="registration">
         <h2 style="text-align: center;color: purple;font-family: Arial, Helvetica, sans-serif;">Registration</h2>
-        <form method="post" action ="#" enctype="multipart/form-data">
+        <form method="post" action ="#" enctype="multipart/form-data" >
             
         <label for="name">Name :</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
@@ -301,29 +306,31 @@
             <div class="row">
             <div class="col-md-6 mb-3">
             <label for="aadharno">Aadhar No. :</label>
-            <input type="text" class="form-control" name="aadharno" id="aadharno" oninput="this.value=this.value.replace(/[^0-9]/g,'')" size="12" minlength="12" maxlength="12" placeholder="1234-4567-7891">
+            <input type="text" class="form-control" name="aadharno" id="aadharno" oninput="this.value=this.value.replace(/[^0-9]/g,'')"    size="12" minlength="12" maxlength="12" placeholder="1234-4567-7891" required>
             </div>
             
             <div class="col-md-6 mb-3">
-            <label for="mobno">Contact :</label>
-            <input type="text" class="form-control" name="mobno" id="mobno"  placeholder="1234-4567-7891"placeholder="Enter your number">
+            <label for="contact">Contact :</label>
+            <input type="text" class="form-control" name="contact" id="contact"   size="10" minlength="10" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'')" required>
             </div>
             </div>
 
             <div class="row">
             <div class="col-md-6 mb-3">
             <label for="email">Email Id :</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+            <input type="email" class="form-control" name="email" required id="email" placeholder="Enter your email">
             </div>
             <div class="col-md-6 mb-3">
             <label for="profession">Profession:</label>
-            <select name="profession" id="profession" class="form-control">
+            <select name="profession" id="profession" class="form-control" required>
               <option value="admin">Admin</option>
               <option value="doctor">Doctor</option>
-              <option value="staff">Staff</option>
-              <option value="nurse">Nurse</option>
+              
               <option value="receptionist">Receptionist</option>
+              <option value="nurse">Nurse</option>
+              
               <option value="accountant">accountant</option>
+              <option value="staff">Staff</option>
 
               
             </select>
@@ -335,21 +342,21 @@
             <div class="col-md-6 mb-3">
                 
             <label for="dateofbirth">Date of Birth :</label>
-            <input type="date" class="form-control" name="dateofbirth" id="dateofbirth">
+            <input type="date" class="form-control" name="dateofbirth" id="dateofbirth" required>
             </div>
             <div class="col-md-6 mb-3">
                 
             <label for="blood">Choose a Blood Group:</label>
-            <select name="blood" id="blood" class="form-control">
-            <option value="">Select blood group</option>
+            <select name="blood" id="blood" class="form-control" required>
+            
               <option value="A+ve">A+ve</option>
-              <option value="B+ve">B+ve</option>
-              <option value="O+ve">O+ve</option>
               <option value="A-ve">A-ve</option>
+              <option value="B+ve">B+ve</option>
               <option value="B-ve">B-ve</option>
-              <option value="O-ve">O-ve</option>
-              <option value="AB-ve">AB-ve</option>
               <option value="AB+ve">AB+ve</option>
+              <option value="AB-ve">AB-ve</option>
+              <option value="O+ve">O+ve</option>
+              <option value="O-ve">O-ve</option>
             </select>
             </div>
         </div>
@@ -357,19 +364,19 @@
        <div class="row">
             <div class="col-md-6 mb-3">
             <label for="qualification" >Qualification</label>
-             <input type="text" name="qualification" class="form-control" id="qualification" >
+             <input type="text" name="qualification" class="form-control" id="qualification" required>
             </div>
             <div class="col-md-6 mb-3">
             
             <label for="department">Department :</label>
-             <select name="department">
-                <option>select department</option>
+             <select name="department" required>
+                
                 <option value="neurology">Neurology</option>
                 <option value="gynaecology">Gynaecology</option>
                 <option value="cardiology">Cardiology</option>
                 <option value="dermatology">Dermatology</option>
                 <option value="radiology">Radiology</option>
-                <option value="ortho">Ortho</option>
+                <option value="orthology">Orthology</option>
                 <option value="dentistry">Dentistry</option>
                
                 
@@ -379,26 +386,26 @@
 
 
 
-        <label for="gender">Gender:</label>
-        <input type="radio" name="gender" id="gender" value="male"> Male
-        <input type="radio" name="gender" id="gender" value="female"> Female
+        <label for="gender" required>Gender:</label>
+        <input type="radio" name="gender"  value="male"> Male
+        <input type="radio" name="gender"  value="female"> Female
         <!--<input type="radio" name="gender" value="other"> Other-->
 
             <br>
 
-            <label for="address">Address :</label>
+            <label for="address" required>Address :</label>
             <input type="text" class="form-control" name="address" id="address" style="height: 60px;">
 
             
             <div class="row">
             <div class="col-md-6 mb-3">
             <label for="username">Username :</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username">
+            <input type="text" class="form-control" name="username" id="username" required placeholder="Enter your Username">
             
             </div>
             <div class="col-md-6 mb-3">
             <label for="experience">Experience :</label>
-            <input type="text" class="form-control" name="experience" id="experience" placeholder="Enter your number">
+            <input type="text" class="form-control" required name="experience" id="experience" placeholder="Enter your number">
             </div>
             </div>
 
@@ -423,26 +430,170 @@
             </div>
             <div class="col-md-6 mb-3">
             <label for="password">Password :</label>
-            <input type="password" class="form-control" name="password" id="password"><br>
+            <input type="password" class="form-control" name="password" id="password" required><br>
 
             </div>
 
             <div class="row d-none">
             <div class="col-md-6 mb-3">
                 <label for="registrationdate"></label>
-                <input type="text" name="registrationdate" >
+                <input type="text" name="registrationdate">
             
             </div>
             
             </div>
 
         </div>
-        <input type="submit" class="btn btn-primary" name="submit" value="submit">
+
+        <!-- <button type="submit" class="btn btn-primary" name="submit" value="submit">submit</button> -->
+            <input type="submit" name="submit" id="submit" class="btn btn-primary">
              <input type="reset" name="reset" value="reset">
 
         </form>
        </div>
         
     </div>
+
+
+
+    <!-- <script>
+      document
+        .getElementById("name")
+        .addEventListener("input", function (event) {
+          var nameInput = event.target.value;
+          var nameRegex = /^[A-Za-z\s]+$/;
+          var nameValidation = document.getElementById("nameValidation");
+
+          if (!nameRegex.test(nameInput)) {
+            nameValidation.textContent =
+              "Name must contain only letters and spaces.";
+          } else {
+            nameValidation.textContent = "";
+          }
+        });
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          var inputs = document.querySelectorAll("input");
+          var isValid = true;
+
+          inputs.forEach(function (input) {
+            if (!input.checkValidity()) {
+              isValid = false;
+            }
+          });
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+
+    <script>
+      //aadhar field valiadtion
+      document
+        .getElementById("aadhar")
+        .addEventListener("input", function (event) {
+          var aadharno = event.target.value;
+          var aadharno = /^[A-Za-z\s]+$/;
+          var aadharnoValidation =
+            document.getElementById("aadharnoValidation");
+
+          if (!nameRegex.test(nameInput)) {
+            nameValidation.textContent = "aadhar must contains only numbers.";
+          } else {
+            nameValidation.textContent = "";
+          }
+        });
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          var inputs = document.querySelectorAll("input");
+          var isValid = true;
+
+          inputs.forEach(function (input) {
+            if (!input.checkValidity()) {
+              isValid = false;
+            }
+          });
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+
+    <script>
+      //email filed Valiadtion
+      document
+        .getElementById("email")
+        .addEventListener("input", function (event) {
+          var emailInput = event.target.value;
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          var emailValidation = document.getElementById("emailValidation");
+
+          if (!emailRegex.test(emailInput)) {
+            emailValidation.textContent =
+              "email must contains only lowercaseletters.";
+          } else {
+            emailValidation.textContent = "";
+          }
+        });
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          var inputs = document.querySelectorAll("input");
+          var isValid = true;
+
+          inputs.forEach(function (input) {
+            if (!input.checkValidity()) {
+              isValid = false;
+            }
+          });
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+    <script>
+      //password field Validations
+      document
+        .getElementById("password")
+        .addEventListener("input", function (event) {
+          var passwordInput = event.target.value;
+          var passwordRegex =
+            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+          var passwordValidation =
+            document.getElementById("passwordValidation");
+
+          if (!passwordRegex.test(passwordInput)) {
+            passwordValidation.textContent =
+              "Password must contain at least one digit, one lowercase letter, one uppercase letter, one special character, and be at least 8 characters long.";
+          } else {
+            passwordValidation.textContent = "";
+          }
+        });
+
+      // Form submission validation
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          var inputs = document.querySelectorAll("input");
+          var isValid = true;
+          inputs.forEach(function (input) {
+            if (!input.checkValidity()) {
+              isValid = false;
+            }
+          });
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script> -->
 </body>
 </html>

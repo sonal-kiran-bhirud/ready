@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../connectionn.php');
+include('../connection.php');
 
 $id=$_SESSION['id'];
 
@@ -16,7 +16,7 @@ $row= mysqli_fetch_assoc($res);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Doctor Dashboard</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -32,6 +32,7 @@ $row= mysqli_fetch_assoc($res);
        
 
     </script>
+
 
 
     <style>
@@ -68,7 +69,7 @@ $row= mysqli_fetch_assoc($res);
     <div class="fluid-container">
         <div class="row">
             <div class="col-sm-2 " style="outline: 2px solid gray;">
-                <center><img width="100" align="center" src="images/medicalc.webp"
+                <center><img width="100" align="center" src="../images/medicalc.webp"
                 ><br>
                     <font color="PURPLE" style="font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-weight: bold;">Health Care</font>
                 </center>
@@ -84,7 +85,7 @@ $row= mysqli_fetch_assoc($res);
                   </button> -->
                    <ul class="dropdown-menu">
                      <li><a class="dropdown-item" href="doctor.php">patient1 details</a></li>
-                     <li><a class="dropdown-item" href="drview.php">patient1 details</a></li>
+                     <li><a class="dropdown-item" href="viewdoctors.php">patient1 details</a></li>
                      
                  </ul>
                 </div><br>
@@ -122,7 +123,7 @@ $row= mysqli_fetch_assoc($res);
                    Nurse
                   </button>
                    <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Nurse Records</a></li>
+                     <li><a class="dropdown-item" href="../nurse/viewnuses.php">Nurse Records</a></li>
                      
                  </ul>
                 </div><br>

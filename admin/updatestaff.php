@@ -8,7 +8,7 @@
 <body>
 <?php 
 
-include('../connectionn.php');
+include('../connection.php');
 if(isset($_POST['updatestaff'])){
     // print_r($_POST);die;
     extract($_POST);
@@ -22,7 +22,7 @@ if(isset($_POST['updatestaff'])){
 
    
 
-    $sql = "UPDATE `register` SET `name`='$name',`email`='$email', `address`='$address', `aadharno`='$aadharno', `dateofbirth`='$dateofbirth' , `blood`='$blood', `gender`='$gender', `username`='$username', `password`='$password', `mobno`='$mobno', `profession`='$profession', `qualification`='$qualification', `department`='$department',`myfile`='myfile' WHERE `id` = '$id'"; 
+    $sql = "UPDATE `register` SET `name`='$name',`email`='$email', `address`='$address', `aadharno`='$aadharno', `dateofbirth`='$dateofbirth' , `blood`='$blood', `gender`='$gender', `username`='$username', `password`='$password', `contact`='$contact', `profession`='$profession', `qualification`='$qualification', `department`='$department',`myfile`='myfile' WHERE `id` = '$id'"; 
    $res = mysqli_query($conn,$sql); 
     if($res){
         echo '<script>

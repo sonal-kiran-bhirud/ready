@@ -13,7 +13,6 @@ include('../connectionn.php');
 $id = $_GET['id'];
 // echo $id;
 
-
 $sql = "DELETE FROM `receptionist` WHERE `id` = '$id'";
 $res = mysqli_query($conn,$sql);
 if($res){

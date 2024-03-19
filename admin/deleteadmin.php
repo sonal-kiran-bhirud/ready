@@ -7,7 +7,7 @@
     </head>
 <body>
     <?php 
-include('../connectionn.php');
+include('../connection.php');
 
 
 $id = $_GET['id'];

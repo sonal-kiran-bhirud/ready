@@ -53,7 +53,7 @@
     
     <?php 
 session_start();
-include('connectionn.php');
+include('connection.php');
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];

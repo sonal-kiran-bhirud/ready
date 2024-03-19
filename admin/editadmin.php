@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../connectionn.php');
+include('../connection.php');
 
 $id = $_GET['id'];
 
@@ -70,8 +70,8 @@ $row = mysqli_fetch_assoc($res);
             <input type="text" class="form-control" name="aadharno" id="aadharno" placeholder="1234-4567-7891" value="<?php echo $row['aadharno'];?>">
             </div>
             <div class="col-md-6 mb-3">
-            <label for="mobno">Conatct :</label>
-            <input type="text" class="form-control" name="mobno" id="mobno" placeholder="Enter your contact number" value="<?php echo $row['mobno'];?>">
+            <label for="contact">Conatct :</label>
+            <input type="text" class="form-control" name="contact" id="contact" placeholder="Enter your contact number" value="<?php echo $row['contact'];?>">
             </div>
             </div>
 
@@ -106,15 +106,15 @@ $row = mysqli_fetch_assoc($res);
                 
             <label for="blood">Choose a Blood Group:</label>
             <select name="blood" id="blood" class="form-control">
-            <option value="">Select blood group</option>
+            
               <option value="A+ve" <?php if($row['blood']== 'A+ve'){ echo 'selected'; }?>>A+ve</option>
-              <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
-              <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
               <option value="A-ve" <?php if($row['blood']== 'A-ve'){ echo 'selected'; }?>>A-ve</option>
+              <option value="B+ve" <?php if($row['blood']== 'B+ve'){ echo 'selected'; }?>>B+ve</option>
               <option value="B-ve" <?php if($row['blood']== 'B-ve'){ echo 'selected'; }?>>B-ve</option>
-              <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
-              <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
               <option value="AB+ve" <?php if($row['blood']== 'AB+ve'){ echo 'selected'; }?>>AB+ve</option>
+              <option value="AB-ve" <?php if($row['blood']== 'AB-ve'){ echo 'selected'; }?>>AB-ve</option>
+              <option value="O+ve" <?php if($row['blood']== 'O+ve'){ echo 'selected'; }?>>O+ve</option>
+              <option value="O-ve" <?php if($row['blood']== 'O-ve'){ echo 'selected'; }?>>O-ve</option>
             </select>
             </div>
         </div>
@@ -134,7 +134,7 @@ $row = mysqli_fetch_assoc($res);
                 <option value="cardiology">Cardiology</option>
                 <option value="dermatology">Dermatology</option>
                 <option value="radiology">Radiology</option>
-                <option value="ortho">Ortho</option>
+                <option value="ortho">Orthology</option>
                 <option value="dentistry">Dentistry</option>
                
                 

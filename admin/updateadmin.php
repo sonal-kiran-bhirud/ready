@@ -8,7 +8,7 @@
 <body>
 <?php 
 
-include('../connectionn.php');
+include('../connection.php');
 if(isset($_POST['update'])){
     // print_r($_POST);die;
     extract($_POST);
@@ -26,7 +26,7 @@ if(move_uploaded_file($tmpmyfile, $folder)){
 }
    
 
-     $sql = "UPDATE `admin` SET `name`='$name',`email`='$email', `address`='$address', `aadharno`='$aadharno', `dateofbirth`='$dateofbirth' , `blood`='$blood', `gender`='$gender', `username`='$username', `password`='$password', `experience`='$experience', `mobno`='$mobno', `profession`='$profession', `qualification`='$qualification', `department`='$department', `myfile`='$myfile' WHERE `id` = '$id'"; 
+     $sql = "UPDATE `admin` SET `name`='$name',`email`='$email', `address`='$address', `aadharno`='$aadharno', `dateofbirth`='$dateofbirth' , `blood`='$blood', `gender`='$gender', `username`='$username', `password`='$password', `experience`='$experience', `contact`='$contact', `profession`='$profession', `qualification`='$qualification', `department`='$department', `myfile`='$myfile' WHERE `id` = '$id'"; 
    $res = mysqli_query($conn,$sql); 
     if($res){
         echo '<script>

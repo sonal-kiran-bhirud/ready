@@ -33,11 +33,11 @@
     <div class="fluid-container">
         <div class="row">
             <div class="col-sm-2 " style="outline: 2px solid gray;">
-            <center><img width="100" align="center" src="images/1600w-hbl5vlZh180.webp"><br>
+            <center><img width="100" align="center" src="../images/1600w-hbl5vlZh180.webp"><br>
                     <font color="PURPLE" style="font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-weight: bold;">Health Care</font>
                 </center>
                 <hr style="margin: 7px; ">
-                <div><img src="images/Accountant1.jpg" alt="image" height="80px" width="80px" style="border-radius: 50%;margin-left: 9px;"><font style="font-size: 20px; font-weight: bold;">Accountant</font></div>
+                <div><img src="../images/Accountant1.jpg" alt="image" height="80px" width="80px" style="border-radius: 50%;margin-left: 9px;"><font style="font-size: 20px; font-weight: bold;">Accountant</font></div>
 
                 <hr style="margin: 7px; ">
                 <div class="dropdown" style="width:100%;margin-left:7px">
@@ -103,7 +103,7 @@
                 </div><br><br><br><br><br>
 
                                                 <div> 
-                                                    <a href="logout.php" class="text-decoration-none"><button class="form-control" style="text-decoration: none;" id="butt"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Log Out</button></a></div><br>
+                                                    <a href="../logout.php" class="text-decoration-none"><button class="form-control" style="text-decoration: none;" id="butt"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Log Out</button></a></div><br>
 
                 <hr style="margin: 7px; ">
             </div>
@@ -112,7 +112,7 @@
                 <nav class="navbar navbar-expand-lg bg-body-tertiary" >
                     <div class="container-fluid" style="background-color:purple">
                         <a class="navbar-brand" href="#">
-                            <img src="images/1600w-hbl5vlZh180.webp" alt="Bootstrap" width="55" height="54" style="border-radius: 50%;">
+                            <img src="../images/1600w-hbl5vlZh180.webp" alt="Bootstrap" width="55" height="54" style="border-radius: 50%;">
                           </a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -177,7 +177,7 @@
                         <input type="text" name="pin" id="pin" class="form-control">
                         </div>
                         <div class="col-4">
-                          <img src="images/billing.jpg" alt="bill" style="margin-left: 20%;">
+                          <img src="../images/billing.jpg" alt="bill" style="margin-left: 20%;">
                         </div>
                       </div>
                         

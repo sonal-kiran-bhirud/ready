@@ -2,11 +2,11 @@
         session_start();
        // $id = $_SESSION['id'];
 
-        include('../connectionn.php');
+        include('../connection.php');
 
 
 
-        $sql = "SELECT `id`, `name`, `email`, `aadharno`, `gender`, `mobno`, `qualification`, `myfile` FROM `nurse`;";
+        $sql = "SELECT `id`, `name`, `email`, `aadharno`, `gender`, `contact`, `qualification`, `myfile` FROM `nurse`;";
         $res = mysqli_query($conn, $sql);
 
     ?>
@@ -121,7 +121,7 @@
     <th>email</th>
     <th>aadharno</th>
     <th>Gender</th>
-    <th>mobno</th>
+    <th>contact</th>
     <th>qualification</th>
     <th>profile photo</th>
     <th>option</th>
@@ -141,7 +141,7 @@ while($row= mysqli_fetch_array($res)){
     <td><?php echo $row['email']; ?></td>
     <td><?php echo $row['aadharno']; ?></td>
     <td><?php echo $row['gender']; ?></td>
-    <td><?php echo $row['mobno']; ?></td>
+    <td><?php echo $row['contact']; ?></td>
     <td><?php echo $row['qualification']; ?></td>
     <td><img src="../uploads/<?php echo $row['myfile']; ?>" style="width:100px;height:100px;"></td>
 

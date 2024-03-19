@@ -2,7 +2,7 @@
 session_start();
 
 
-include('../connectionn.php');
+include('../connection.php');
 $id =$_GET['id'];
 
 $sql="SELECT * FROM doctor WHERE id=$id";
@@ -46,7 +46,7 @@ $row = mysqli_fetch_assoc($res);
     </style>
 </head>
 <body>
-    <div class="fluid-container" style="background-image: url('images/_doctor.jpg'); background-size: cover;background-repeat: no-repeat;height:100vh;">
+    <div class="fluid-container" style="background-image: url('../images/_doctor.jpg'); background-size: cover;background-repeat: no-repeat;height:100vh;">
     <div class="profile">
     <div class="row" style="background-color: #403c3c;" id="container" style="float:right">
             
@@ -57,10 +57,10 @@ $row = mysqli_fetch_assoc($res);
             </div>
             <div class="col-sm-5 p-4" style="background-color: #403c3c; color: white; heiht:500px;">
 
-                        <img src="images/1600w-hbl5vlZh180.webp" style="height: 80Px; float: right;" alt="logo">
+                        <img src="../images/1600w-hbl5vlZh180.webp" style="height: 80Px; float: right;" alt="logo">
 
                         <h3>Dr.<?php echo $row['name'] ?></h3>
-                        <h5><i class="fa-solid fa-user-graduate"></i>&nbsp;&nbsp;&nbsp;<?php echo $row['Qualification'] ?></h5><br>
+                        <h5><i class="fa-solid fa-user-graduate"></i>&nbsp;&nbsp;&nbsp;<?php echo $row['qualification'] ?></h5><br>
                     
                         <h6><i class="fa-solid fa-user-doctor"></i>&nbsp;&nbsp;&nbsp;Speciality :-</h6>
                         <p><?php echo $row['department'] ?></p><br>
@@ -69,10 +69,13 @@ $row = mysqli_fetch_assoc($res);
                         <p><?php echo $row['experience'] ?></p>
                     
                         <h6><i class="fa-solid fa-square-phone"></i>&nbsp;&nbsp;&nbsp;Contact :-</h6>
-                        <p><?php echo $row['mobno'] ?></p><br>
+                        <p><?php echo $row['contact'] ?></p><br>
 
                         <h6><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;Address :-</h6>
-                        <p><?php echo $row['address'] ?>
+                        <p><?php echo $row['address'] ?><br>
+                        
+
+                        <a href="#" onclick="history.back(); return false;" class="btn btn-primary mt-5">back</a>
                         
             </div>
             </div>
